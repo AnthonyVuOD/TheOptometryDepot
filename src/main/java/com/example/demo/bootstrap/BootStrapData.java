@@ -105,12 +105,12 @@ public class BootStrapData implements CommandLineRunner {
 //            System.out.println(part.getName()+" "+part.getCompanyName());
 //        }
 
-
-        Product refractor= new Product("Auto-Refractor",1200.00,100);
-        Product chart= new Product("Digital Acuity Chart", 750.00, 100);
-        Product computer= new Product("Apple Desktop Computer", 1300.00,100);
-        Product slitLamp= new Product("Slit Lamp", 800.00, 100);
-        Product phoropter= new Product("Auto-Phoropter", 800.00,100);
+//----------------------
+        Product refractor= new Product("Auto-Refractor",1200.00,100,1);
+        Product chart= new Product("Digital Acuity Chart", 750.00, 100,1);
+        Product computer= new Product("Apple Desktop Computer", 1300.00,100,1);
+        Product slitLamp= new Product("Slit Lamp", 800.00, 100,1);
+        Product phoropter= new Product("Auto-Phoropter", 800.00,100,1);
 
         productRepository.save(refractor);
         productRepository.save(chart);

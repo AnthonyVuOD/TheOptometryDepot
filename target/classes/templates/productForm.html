@@ -20,7 +20,7 @@
 
 
     <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/> Inventory</p>
-
+    <p><input type="text" th:field="*{storeNumber}" placeholder="Store Number" class="form-control mb-4 col-4"/>Store Number</p>
     <p>
         <div th:if="${#fields.hasAnyErrors()}">
             <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>

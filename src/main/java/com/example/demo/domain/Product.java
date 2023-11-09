@@ -4,7 +4,6 @@ import com.example.demo.validators.ValidEnufParts;
 import com.example.demo.validators.ValidProductPrice;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -31,21 +30,25 @@ public class Product implements Serializable {
     int inv;
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
+    //added new field
+    int storeNumber;
 
     public Product() {
     }
 
-    public Product(String name, double price, int inv) {
+    public Product(String name, double price, int inv, int storeNumber) {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.storeNumber=storeNumber;
     }
 
-    public Product(long id, String name, double price, int inv) {
+    public Product(long id, String name, double price, int inv, int storeNumber) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.storeNumber=storeNumber;
     }
 
     public long getId() {
@@ -87,6 +90,12 @@ public class Product implements Serializable {
     public void setParts(Set<Part> parts) {
         this.parts = parts;
     }
+
+
+    //setters and getters for new field
+    public void setStoreNumber(int num){this.storeNumber=num;}
+    public int getStoreNumber(){return storeNumber;}
+    //
 
     public String toString(){
         return this.name;
